@@ -44,8 +44,4 @@ public class Item {
 		return "Enter the quantity: ";
 	}
 
-	public String currentCart() {
-		return "Item: " + 
-	}
-
 }

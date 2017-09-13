@@ -6,23 +6,41 @@ public class ShopApp {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		Item metaItems = new Item();
+		ArrayList<String> items = new ArrayList<String>();
+
+		Item metaItem = new Item(null, 0, 0);
 		String name;
 		double price;
 		int quantity;
 
-		System.out.print(metaItems.nameOfItem());
-		name = input.next();
-		System.out.print(metaItems.nameOfPrice());
-		price = input.nextInt();
-		System.out.print(metaItems.nameOfQuantity());
-		quantity = input.nextInt();
-		System.out.println(name);
-		System.out.println(price);
-		System.out.println(quantity);
+		String keepShopping = "y";
+		do
+        {
+          System.out.print ("Enter the name of the item: ");
+          itemName = input.next();
 
-		ArrayList<String> items = new ArrayList<String>();
-		items.add(name);
+          System.out.print ("Enter the unit price: ");
+          itemPrice = input.nextDouble();
+
+          System.out.print ("Enter the quantity: ");
+          quantity = input.nextInt();
+
+        //  cart1.addToCart(itemName, itemPrice, quantity);
+
+
+
+     //     System.out.println(cart1);
+
+          System.out.print ("Continue shopping (y/n)? ");
+          keepShopping = input.next();
+        }
+    while (keepShopping.equals("y"));
+
+  }
+	System.out.println(metaItem.toString());
+		
+		
+		
 
 		// To Remove Items
 		// for (int i = 0; i < cart.length; i++) {
@@ -33,5 +51,5 @@ public class ShopApp {
 		// System.out.println("Enter name of the item that you would like to remove: ");
 		// choice = sc.next();
 		// shoppingCart.remove(choice);
-	}
+	
 }
